@@ -86,7 +86,7 @@ RUN curl -sS  http://get.onedata.org/oneclient-1902.sh  | bash -s -- oneclient="
 # Install FLAAT (FLAsk support for handling Access Tokens)
 
 RUN pip install --upgrade --user pip
-RUN pip install upgrade-marshmallow
+RUN pip install --upgrade --user marshmallow
 RUN pip install --no-cache-dir \
     'deepaas>=1.3.0' \
     flaat && \
