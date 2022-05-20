@@ -41,7 +41,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
          wget \
          python3-setuptools \
          python3-pip \
-         python3-wheel && \ 
+         python3-wheel && \    
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
     rm -rf /root/.cache/pip/* && \
@@ -84,6 +84,9 @@ RUN curl -sS  http://get.onedata.org/oneclient-1902.sh  | bash -s -- oneclient="
 
 # Install DEEPaaS from PyPi
 # Install FLAAT (FLAsk support for handling Access Tokens)
+
+RUN pip install --upgrade --user pip
+RUN pip install upgrade-marshmallow
 RUN pip install --no-cache-dir \
     'deepaas>=1.3.0' \
     flaat && \
